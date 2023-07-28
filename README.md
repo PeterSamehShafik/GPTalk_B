@@ -1,6 +1,6 @@
-# GameStore Server
+# GPTalk Server
     
-   GameStore is a backend server using NodeJs, ExpressJs and Mongodb.
+   GPTalk_B is a backend server using NodeJs, ExpressJs and Mongodb.
 
 ## Secuirty & Services
 
