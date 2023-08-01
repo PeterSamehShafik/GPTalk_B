@@ -79,7 +79,7 @@ export const getChatMessages = asyncHandler(
         if (!exist) {
             return next(Error('Invalid ID, please try again', { cause: 404 }));
         }
-        const recipient = exist.users[0]._id === req.user._id ? { _id: exist.users[0]._id, userName: exist.users[0].userName } : { _id: exist.users[1]._id, userName: exist.users[1].userName }
+        const recipient = JSON.stringify(exist.users[0]._id) === JSON.stringify(req.user._id) ? { _id: exist.users[1]._id, userName: exist.users[1].userName } : { _id: exist.users[0]._id, userName: exist.users[0].userName }
         const lastMsg = await messageModel.findById(exist.lastMessage)
         if (lastMsg) {
             if (JSON.stringify(lastMsg.sender) !== JSON.stringify(req.user._id)) {
